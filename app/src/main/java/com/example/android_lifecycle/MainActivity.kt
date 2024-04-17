@@ -17,9 +17,11 @@ class MainActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
-        val fragment = ConfigChangeFragment.newInstance()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frameLayout, fragment, "fdf")
-            .commit()
+        if (savedInstanceState == null) {
+            val fragment = ConfigChangeFragment.newInstance()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.frameLayout, fragment, "fdf")
+                .commit()
+        }
     }
 }
