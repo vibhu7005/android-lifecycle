@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity(), ConfigChangeFragment.DataSubmittedCall
         if (savedInstanceState == null) {
             val fragment = ConfigChangeFragment.newInstance()
             supportFragmentManager.beginTransaction()
-                .add(R.id.frameLayout, fragment, "fdf")
+                .replace(R.id.frameLayout, fragment, "fdf")
+                .addToBackStack(null)
                 .commit()
         }
     }
